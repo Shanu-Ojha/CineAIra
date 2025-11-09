@@ -18,7 +18,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const baseURL = 'http://localhost:3001/api/tmdb'
+        const baseURL = `${import.meta.env.VITE_API_BASE}/api/tmdb`
 
         const [nowPlayingRes, popularRes, topRatedRes, trendingRes] = await Promise.all([
           axios.get(`${baseURL}/nowplaying`),
@@ -80,3 +80,4 @@ const Home = () => {
 }
 
 export default Home
+
